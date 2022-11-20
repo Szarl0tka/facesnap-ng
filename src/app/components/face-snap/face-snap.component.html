@@ -1,0 +1,18 @@
+
+    <div class="w-4/5 mx-auto rounded-xl overflow-hidden bg-white overflow-hidden shadow-lg">
+        <figure (click)="onViewFaceSnap()" class=" h-40 flex items-center justify-center overflow-hidden">
+            <img  [src]="faceSnap.imageUrl" [alt]="faceSnap.title" class="max-w-full">
+        </figure>
+        <button (click)="onSnap()" [ngClass]="{'bg-teal-700': snapped, 'bg-slate-800': !snapped}"  class="p-3 uppercase w-full">
+            <span class="text-white font-bold text-sm">{{ buttonText }}</span>
+        </button>
+        <article class="p-6 box-border">
+            <h2 class="font-bold mb-6 flex justify-between">
+                <span class="">{{ faceSnap.title }}</span>
+                <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)' }">🤌 {{ faceSnap.snaps }}</span>
+            </h2>
+            <p class="text-sm italic mt-6">{{ faceSnap.createdDate | date: 'le d MMMM yyyy' }}</p>
+        </article>
+        
+    </div>
+
