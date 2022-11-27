@@ -1,0 +1,10 @@
+<div class="container w-1/2 text-center mx-auto mt-12">
+    <button  (click)="onContinue()" class="transition duration-300 ease-out hover:ease-in inline-block bg-slate-800 text-white rounded-full uppercase font-bold py-3 px-6 hover:bg-teal-800">Continuer vers Snapface</button>
+    <form #emailForm="ngForm" (ngSubmit)="onSubmitForm(emailForm)">
+        <label for="emailInput" class="font-serif italic block text-center mb-8 p-6 text-lg">Inscrivez-vous pour recevoir notre newsletter !</label>
+        <div class="flex justify-center">
+            <input type="email" id="emailInput" [(ngModel)]="userEmail" name="userEmail" class="p-6 h-12 box-border inline-block">
+            <button type="submit" class="py-3 px-6 rounded-r-lg bg-slate-800 text-white h-12 uppercase font-bold box-border">S'inscrire</button>
+        </div>
+    </form>
+</div>

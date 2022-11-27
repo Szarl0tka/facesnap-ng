@@ -1,0 +1,18 @@
+<div class="w-1/2 mt-20 mx-auto bg-white box-border rounded-xl p-12">
+    <h2 class="mb-8 text-center font-serif italic font-bold text-2xl">Connexion</h2>
+    <div>   
+        <div class="flex mb-4">
+            <label for="email" class="font-bold uppercase w-1/5">Email</label>
+            <input id="email" type="text" class="border border-slate-600 rounded-xl w-2/3 flex-1">
+        </div>
+        <div class="flex mb-4">
+            <label for="password" class="font-bold uppercase w-1/5" >Mot de passe</label>
+            <input id="password" type="text" class="border border-slate-600 rounded-xl flex-1">
+        </div>
+        <div class="action-buttons flex justify-center mt-10">
+            <button type="submit" (click)="onLogin()" class="rounded-xl bg-slate-800 uppercase text-white font-bold px-6 py-2 ">Se connecter</button>
+        </div>
+    </div>
+</div>
+
+

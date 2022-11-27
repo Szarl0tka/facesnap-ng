@@ -1,0 +1,3 @@
+<div class="container w-4/5 mx-auto flex  mt-8 cursor-pointer flex-wrap">
+    <app-face-snap *ngFor="let faceSnap of faceSnaps$ | async" [faceSnap]="faceSnap" [ngClass]="'w-1/4 pt-6'"></app-face-snap>
+</div>

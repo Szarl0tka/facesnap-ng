@@ -1,15 +1,14 @@
-<div class="w-1/2 mx-auto">
+
+<div *ngIf="faceSnap$ | async as faceSnap" class="w-1/2 mx-auto">
     <a routerLink="/facesnaps" class=" mb-5 inline-block bg-slate-800 text-white font-bold px-3 py-1 rounded-3xl hover:bg-teal-700">← Back</a>
-    <div class=" rounded-xl overflow-hidden bg-white overflow-hidden shadow-lg">
+    <div class="rounded-xl overflow-hidden bg-white overflow-hidden shadow-lg">
         <figure class="flex items-center justify-center overflow-hidden">
             <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" class="max-w-full">
         </figure>
-        <button (click)="onSnap()" [ngClass]="{'bg-teal-700': snapped, 'bg-slate-800': !snapped}"  class="p-3 uppercase w-full">
-            <span class="text-white font-bold text-sm">{{ buttonText }}</span>
+        <button (click)="onSnap(faceSnap.id)" [ngClass]="{'bg-teal-700': snapped, 'bg-slate-800': !snapped}"  class="p-3 uppercase w-full">
+            <span class="text-white font-bold text-sm">{{ snapped ? 'Snapped!' : 'Snap this!' }}</span>
         </button>
         <article class="p-6 box-border">
-            
-            
             <h2 class="font-bold mb-6 flex justify-between">
                 <span class="">{{ faceSnap.title }}</span>
                 <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)' }">🤌 {{ faceSnap.snaps }}</span>
